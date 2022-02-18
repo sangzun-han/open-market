@@ -1,10 +1,15 @@
 import React from "react";
+import LoginFooter from "./loginFooter";
+import LoginForm from "./loginForm";
+import LoginHeader from "./loginHeader";
 
-const Login = (props) => {
+const Login = () => {
   return (
-    <div>
-      <h1>login</h1>
-    </div>
+    <>
+      <LoginHeader />
+      <LoginForm />
+      <LoginFooter />
+    </>
   );
 };
 

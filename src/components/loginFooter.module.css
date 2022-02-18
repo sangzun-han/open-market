@@ -1,0 +1,21 @@
+.login_footer {
+  width: 184px;
+  height: 20px;
+  margin: 0 auto;
+}
+
+.signup,
+.search_passwrod {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #333333;
+}
+
+.signup::after {
+  content: "|";
+  height: 14px;
+  padding-right: 14px;
+  padding-left: 14px;
+}

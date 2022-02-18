@@ -1,0 +1,17 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 180px;
+  margin-bottom: 70px;
+}
+
+.logo {
+  width: 238px;
+  height: 74px;
+}
+
+.logo img {
+  width: 238px;
+  height: 74px;
+}
