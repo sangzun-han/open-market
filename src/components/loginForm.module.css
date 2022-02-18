@@ -24,11 +24,11 @@
   border-right: 1px solid #c4c4c4;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-
   font-size: 18px;
   font-weight: 500;
   line-height: 22px;
   color: #000000;
+  cursor: pointer;
 }
 
 .btn_seller {
@@ -45,6 +45,7 @@
   font-weight: 500;
   line-height: 22px;
   color: #000000;
+  cursor: pointer;
 }
 
 .login_info {
