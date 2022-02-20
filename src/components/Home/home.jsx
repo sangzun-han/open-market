@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getProducts } from "../../service/fetcher";
+import TopNavigationBar from "../topNavigationBar/topNavigationBar";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -11,6 +12,7 @@ const Home = () => {
 
   return (
     <div>
+      <TopNavigationBar />
       <h1>Home</h1>
     </div>
   );
