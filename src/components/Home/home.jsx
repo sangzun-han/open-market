@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getProducts } from "../../service/fetcher";
+import EventBanner from "../eventBanner/eventBanner";
 import TopNavigationBar from "../topNavigationBar/topNavigationBar";
 
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
   return (
     <div>
       <TopNavigationBar />
-      <h1>Home</h1>
+      <EventBanner />
     </div>
   );
 };
