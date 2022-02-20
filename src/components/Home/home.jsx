@@ -5,10 +5,10 @@ const Home = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     getProducts().then((res) => {
-      console.log(res.data.results);
       setProducts(res.data.results);
     });
   }, []);
+
   return (
     <div>
       <h1>Home</h1>
