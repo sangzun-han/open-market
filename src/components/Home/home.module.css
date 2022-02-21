@@ -1,0 +1,8 @@
+.flex_wrap {
+  width: 1440px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  gap: 70px 0px;
+  margin: 0 auto;
+}
