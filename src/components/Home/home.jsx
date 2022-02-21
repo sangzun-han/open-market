@@ -4,6 +4,7 @@ import EventBanner from "../eventBanner/eventBanner";
 import TopNavigationBar from "../topNavigationBar/topNavigationBar";
 import ProductList from "./productList";
 import styles from "./home.module.css";
+import Footer from "../footer/footer";
 const Home = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -23,6 +24,7 @@ const Home = () => {
           );
         })}
       </main>
+      <Footer />
     </>
   );
 };
