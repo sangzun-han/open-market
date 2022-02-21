@@ -22,6 +22,12 @@ const postConfing = (url, data) => {
   };
 };
 
+// 회원가입
+export const signup = async (userData) => {
+  const res = axios(postConfing("/accounts/singup/", userData));
+  return res;
+};
+
 // LOGIN
 export const login = async (userData) => {
   const res = await axios(postConfing("/accounts/login/", userData));

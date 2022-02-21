@@ -1,6 +1,6 @@
 .main {
   width: 550px;
-  height: 845px;
+  height: 720px;
   margin: 0 auto;
   border: 1px solid #c4c4c4;
   border-top: none;
@@ -111,6 +111,10 @@ label {
   position: relative;
 }
 
+.phone {
+  margin-bottom: 0px;
+}
+
 .label .input_password,
 .label .check_input_password,
 .label .name_input {
@@ -150,30 +154,6 @@ label {
 
 .phone input:not(:last-child) {
   margin-right: 12px;
-}
-
-.email .email_address {
-  width: 480px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.email .email_address input {
-  width: 220px;
-  height: 54px;
-  border-radius: 5px;
-  border: 1px solid #c4c4c4;
-  padding: 16px;
-  font-size: 20px;
-  line-height: 20px;
-}
-
-.email .email_address span {
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 20px;
-  color: #767676;
 }
 
 .terms {

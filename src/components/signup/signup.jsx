@@ -1,12 +1,42 @@
-import React from "react";
+import React, { useRef } from "react";
+import { signup } from "../../service/fetcher";
 import SignupForm from "./signupForm";
 import SignupHeader from "./signupHeader";
 
 const Signup = () => {
+  const idRef = useRef("");
+  const pwdRef = useRef("");
+  const rePwdRef = useRef("");
+  const nameRef = useRef("");
+  const firstPhoneRef = useRef("");
+  const middlePhoneRef = useRef("");
+  const lastPhoneRef = useRef("");
+  const handleValidCheck = () => {
+    const userData = {
+      username: idRef.current.value, // 아이디
+      password: pwdRef.current.value,
+      password2: rePwdRef.current.value,
+      phone_number: firstPhoneRef.current.value + middlePhoneRef + lastPhoneRef,
+      name: nameRef.current.value, // 이름
+    };
+    signup(userData).then((res) => {
+      console.log(res);
+    });
+  };
+
   return (
     <>
       <SignupHeader />
-      <SignupForm />
+      <SignupForm
+        idRef={idRef}
+        pwdRef={pwdRef}
+        rePwdRef={rePwdRef}
+        firstPhoneRef={firstPhoneRef}
+        middlePhoneRef={middlePhoneRef}
+        lastPhoneRef={lastPhoneRef}
+        nameRef={nameRef}
+        handleValidCheck={handleValidCheck}
+      />
     </>
   );
 };
