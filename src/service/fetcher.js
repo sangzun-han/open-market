@@ -25,7 +25,8 @@ const postConfing = (url, data) => {
 // 회원가입
 export const signup = async (userData) => {
   const res = await axios(postConfing("/accounts/signup/", userData));
-  return res;
+  if (res.status === 201) return true;
+  else return false;
 };
 
 // LOGIN

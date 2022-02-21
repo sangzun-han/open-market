@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./signupForm.module.css";
 
 const SignupForm = ({
@@ -11,6 +11,19 @@ const SignupForm = ({
   lastPhoneRef,
   handleValidCheck,
 }) => {
+  const [passwordValid, setPasswordValid] = useState("off");
+
+  const passwordCheck = () => {
+    const reg = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+    return reg.test(pwdRef.current.value);
+  };
+
+  const handlePassword = (event) => {
+    event.preventDefault();
+    if (passwordCheck()) setPasswordValid("on");
+    else setPasswordValid("off");
+  };
   return (
     <>
       <main className={styles.main}>
@@ -38,9 +51,10 @@ const SignupForm = ({
                 ref={pwdRef}
                 className={styles.input_password}
                 type="password"
+                onBlur={handlePassword}
               />
             </div>
-            <img src="images/icon-check-off.svg" alt="check" />
+            <img src={`images/icon-check-${passwordValid}.svg`} alt="check" />
           </div>
 
           <div className={styles.check_password}>
@@ -66,7 +80,7 @@ const SignupForm = ({
             <div className={styles.label}>
               <label htmlFor="name">휴대폰 번호</label>
               <div className={styles.phone_nubmer}>
-                <input ref={firstPhoneRef} type="text" value="010" />
+                <input ref={firstPhoneRef} type="text" defaultValue="010" />
                 <input ref={middlePhoneRef} type="text" />
                 <input ref={lastPhoneRef} type="text" />
               </div>

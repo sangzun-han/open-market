@@ -1,9 +1,11 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { signup } from "../../service/fetcher";
 import SignupForm from "./signupForm";
 import SignupHeader from "./signupHeader";
 
 const Signup = () => {
+  const navigate = useNavigate();
   const idRef = useRef("");
   const pwdRef = useRef("");
   const rePwdRef = useRef("");
@@ -11,6 +13,7 @@ const Signup = () => {
   const firstPhoneRef = useRef("");
   const middlePhoneRef = useRef("");
   const lastPhoneRef = useRef("");
+
   const handleValidCheck = () => {
     const userData = {
       username: idRef.current.value, // 아이디
@@ -22,9 +25,8 @@ const Signup = () => {
         middlePhoneRef.current.value +
         lastPhoneRef.current.value,
     };
-    console.log(userData);
     signup(userData).then((res) => {
-      console.log(res);
+      if (res) navigate("/login");
     });
   };
 
