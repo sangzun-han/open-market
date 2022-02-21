@@ -16,9 +16,13 @@ const Signup = () => {
       username: idRef.current.value, // 아이디
       password: pwdRef.current.value,
       password2: rePwdRef.current.value,
-      phone_number: firstPhoneRef.current.value + middlePhoneRef + lastPhoneRef,
       name: nameRef.current.value, // 이름
+      phone_number:
+        firstPhoneRef.current.value +
+        middlePhoneRef.current.value +
+        lastPhoneRef.current.value,
     };
+    console.log(userData);
     signup(userData).then((res) => {
       console.log(res);
     });
