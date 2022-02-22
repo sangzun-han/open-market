@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./topNavigationBar.module.css";
-const TopNavigationBar = () => {
+const TopNavigationBar = ({ token }) => {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
@@ -24,7 +24,7 @@ const TopNavigationBar = () => {
         <Link to="#">
           <div className={styles.mypage}>
             <img src="/images/icon-user.svg" alt="user" />
-            <span>로그인</span>
+            {token ? <span>마이페이지</span> : <span>로그인</span>}
           </div>
         </Link>
       </div>

@@ -63,6 +63,7 @@
 .mypage {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .shopping_cart {
@@ -89,10 +90,6 @@
 }
 
 .mypage img {
-  width: 32px;
+  width: 50px;
   height: 32px;
-}
-
-.mypage {
-  margin-left: 20px;
 }
