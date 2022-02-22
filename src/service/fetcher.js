@@ -40,3 +40,9 @@ export const getProducts = async () => {
   const res = await axios(getConfig("/products"));
   return res;
 };
+
+// 상품 디테일
+export const getProductDetail = async (product_id) => {
+  const res = await axios(getConfig(`/products/${product_id}`));
+  return res;
+};

@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import styles from "./productList.module.css";
 
 const ProductList = ({ product }) => {
-  const { product_name, image, price, seller_store } = product;
+  const { product_id, product_name, image, price, seller_store } = product;
   return (
     <div className={styles.product}>
-      <Link to="">
+      <Link to={`/product/${product_id}`}>
         <div className={styles.product_image}>
           <img src={image} alt="product" />
         </div>
