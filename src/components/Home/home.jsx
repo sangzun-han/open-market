@@ -20,13 +20,18 @@ const Home = () => {
     <>
       <TopNavigationBar token={token} />
       <EventBanner />
-      <main className={styles.flex_wrap}>
-        {products.map((product) => {
-          return (
-            <ProductList key={`key-${product.product_id}`} product={product} />
-          );
-        })}
-      </main>
+      {products && (
+        <main className={styles.flex_wrap}>
+          {products.map((product) => {
+            return (
+              <ProductList
+                key={`key-${product.product_id}`}
+                product={product}
+              />
+            );
+          })}
+        </main>
+      )}
       <Footer />
     </>
   );

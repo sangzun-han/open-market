@@ -3,6 +3,10 @@ import styles from "./productDetailInfo.module.css";
 
 const ProductDetailInfo = ({ product }) => {
   const { product_name, image, price, seller_store } = product;
+  const convertPrice = () => {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+
   return (
     <main className={styles.main}>
       <section className={styles.product}>
@@ -15,7 +19,7 @@ const ProductDetailInfo = ({ product }) => {
           <p className={styles.seller_store}>{seller_store}</p>
           <p className={styles.product_name}>{product_name}</p>
           <span className={styles.price}>
-            {price}
+            {convertPrice()}
             <span className={styles.unit}>원</span>
           </span>
         </div>
@@ -54,7 +58,7 @@ const ProductDetailInfo = ({ product }) => {
               총 수량 <span className={styles.total_count}>1개</span>
             </span>
             <span className={styles.total_price}>
-              {price}
+              {convertPrice()}
               <span className={styles.total_unit}>원</span>
             </span>
           </div>

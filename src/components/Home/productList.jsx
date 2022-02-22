@@ -4,6 +4,9 @@ import styles from "./productList.module.css";
 
 const ProductList = ({ product }) => {
   const { product_id, product_name, image, price, seller_store } = product;
+  const convertPrice = () => {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
   return (
     <div className={styles.product}>
       <Link to={`/product/${product_id}`}>
@@ -20,7 +23,7 @@ const ProductList = ({ product }) => {
       </div>
 
       <div className={styles.product_price}>
-        <span className={styles.price}>{price}</span>
+        <span className={styles.price}>{convertPrice()}</span>
         <span className={styles.unit}>원</span>
       </div>
     </div>

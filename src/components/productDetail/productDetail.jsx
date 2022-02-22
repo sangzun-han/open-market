@@ -18,7 +18,7 @@ const ProductDetail = () => {
   return (
     <>
       <TopNavigationBar token={token} />
-      <ProductDetailInfo product={product} />
+      {product && <ProductDetailInfo product={product} />}
     </>
   );
 };
