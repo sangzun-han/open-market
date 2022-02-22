@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { setCookie } from "../../service/cookie";
 import { login } from "../../service/fetcher";
 import LoginFooter from "./loginFooter";
 import LoginForm from "./loginForm";
@@ -17,10 +18,14 @@ const Login = () => {
       password: passwordRef.current.value,
       login_type: loginType,
     };
-    login(userData).then((res) => {
-      navigate("/");
-      console.log(res);
-    });
+    login(userData)
+      .then((res) => {
+        navigate("/");
+        setCookie("token", res.data.token);
+      })
+      .catch(() => {
+        alert("로그인 정보를 확인해주세요!");
+      });
   };
   return (
     <>
