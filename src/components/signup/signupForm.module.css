@@ -148,7 +148,7 @@ label {
   border-radius: 5px;
   border: 1px solid #c4c4c4;
   padding: 16px 56px;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 20px;
 }
 
@@ -194,4 +194,20 @@ label {
   line-height: 22px;
   font-weight: bold;
   color: #ffffff;
+  cursor: initial;
+}
+
+.activate {
+  background: #21bf48;
+  cursor: pointer;
+}
+
+.err {
+  font-size: 16px;
+  line-height: 20px;
+  color: #eb5757;
+  margin-top: 10px;
+  position: absolute;
+  bottom: -30px;
+  left: 0;
 }
