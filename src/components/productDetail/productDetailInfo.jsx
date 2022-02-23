@@ -1,8 +1,12 @@
 import React from "react";
+import { getCookie } from "../../service/cookie";
+import { putCart } from "../../service/fetcher";
 import styles from "./productDetailInfo.module.css";
 
 const ProductDetailInfo = ({ product, count, setCount }) => {
-  const { product_name, image, price, seller_store } = product;
+  const { product_id, product_name, image, price, seller_store } = product;
+  const token = getCookie("token");
+  const isCheck = token ? true : false;
 
   const convertPrice = () => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -17,6 +21,18 @@ const ProductDetailInfo = ({ product, count, setCount }) => {
 
   const onDecrease = () => {
     setCount((prevCount) => prevCount - 1);
+  };
+
+  const handleCart = () => {
+    const data = {
+      product_id: product_id,
+      quantity: count,
+      check: isCheck,
+    };
+    console.log(data);
+    putCart(data, token).then((res) => {
+      console.log(res);
+    });
   };
   return (
     <main className={styles.main}>
@@ -79,7 +95,9 @@ const ProductDetailInfo = ({ product, count, setCount }) => {
 
         <div className={styles.btn}>
           <button className={styles.btn_buy}>바로 구매</button>
-          <button className={styles.btn_cart}>장바구니</button>
+          <button className={styles.btn_cart} onClick={handleCart}>
+            장바구니
+          </button>
         </div>
       </section>
     </main>

@@ -22,14 +22,15 @@ const postConfing = (url, data) => {
   };
 };
 
-const postConfigWithToken = (url, token) => {
+const postConfigWithToken = (url, data, token) => {
   return {
     method: "POST",
     url: API_END_POINT + url,
     headers: {
-      Authorization: token,
+      Authorization: "JWT " + token,
       "Content-Type": "application/json",
     },
+    data: data,
   };
 };
 
@@ -59,7 +60,7 @@ export const getProductDetail = async (product_id) => {
 };
 
 // 장바구니에 물건 넣기
-export const putCart = async () => {
-  const res = await axios(postConfigWithToken("/cart"));
+export const putCart = async (data, token) => {
+  const res = await axios(postConfigWithToken("/cart/", data, token));
   return res;
 };
