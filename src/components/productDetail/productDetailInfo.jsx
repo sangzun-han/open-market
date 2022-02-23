@@ -3,7 +3,7 @@ import { getCookie } from "../../service/cookie";
 import { putCart } from "../../service/fetcher";
 import styles from "./productDetailInfo.module.css";
 
-const ProductDetailInfo = ({ product, count, setCount }) => {
+const ProductDetailInfo = ({ product, count, setCount, setModal }) => {
   const { product_id, product_name, image, price, seller_store } = product;
   const token = getCookie("token");
   const isCheck = token ? true : false;
@@ -29,10 +29,14 @@ const ProductDetailInfo = ({ product, count, setCount }) => {
       quantity: count,
       check: isCheck,
     };
-    console.log(data);
-    putCart(data, token).then((res) => {
-      console.log(res);
-    });
+
+    putCart(data, token)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch(() => {
+        setModal(true);
+      });
   };
   return (
     <main className={styles.main}>
