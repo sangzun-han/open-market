@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { getCookie } from "../../service/cookie";
 import { putCart } from "../../service/fetcher";
 import styles from "./productDetailInfo.module.css";
 
 const ProductDetailInfo = ({ product, count, setCount, setModal }) => {
+  const navigate = useNavigate();
   const { product_id, product_name, image, price, seller_store } = product;
   const token = getCookie("token");
   const isCheck = token ? true : false;
@@ -32,6 +34,7 @@ const ProductDetailInfo = ({ product, count, setCount, setModal }) => {
 
     putCart(data, token)
       .then((res) => {
+        navigate("/");
         console.log(res);
       })
       .catch(() => {

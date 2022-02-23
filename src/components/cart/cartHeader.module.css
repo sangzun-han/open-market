@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 54px 0px;
+}
+
+.header h1 {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 44px;
+
+  color: #000000;
+}
