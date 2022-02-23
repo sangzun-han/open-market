@@ -8,6 +8,7 @@ import { getCookie } from "../../service/cookie";
 const ProductDetail = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState("");
+  const [count, setCount] = useState(1);
   const token = getCookie("token");
 
   useEffect(() => {
@@ -18,7 +19,13 @@ const ProductDetail = () => {
   return (
     <>
       <TopNavigationBar token={token} />
-      {product && <ProductDetailInfo product={product} />}
+      {product && (
+        <ProductDetailInfo
+          product={product}
+          count={count}
+          setCount={setCount}
+        />
+      )}
     </>
   );
 };

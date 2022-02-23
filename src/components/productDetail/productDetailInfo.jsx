@@ -1,12 +1,23 @@
 import React from "react";
 import styles from "./productDetailInfo.module.css";
 
-const ProductDetailInfo = ({ product }) => {
+const ProductDetailInfo = ({ product, count, setCount }) => {
   const { product_name, image, price, seller_store } = product;
+
   const convertPrice = () => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
+  const totalConvertPrice = () => {
+    return (price * count).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
 
+  const onIncrease = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  const onDecrease = () => {
+    setCount((prevCount) => prevCount - 1);
+  };
   return (
     <main className={styles.main}>
       <section className={styles.product}>
@@ -35,16 +46,18 @@ const ProductDetailInfo = ({ product }) => {
             className={styles.minus}
             src="/images/icon-minus-line.svg"
             alt="minus"
+            onClick={onDecrease}
           />
 
           <div className={styles.count}>
-            <span>1</span>
+            <span>{count}</span>
           </div>
 
           <img
             className={styles.plus}
             src="/images/icon-plus-line.svg"
             alt="plus"
+            onClick={onIncrease}
           />
         </div>
 
@@ -55,10 +68,10 @@ const ProductDetailInfo = ({ product }) => {
 
           <div className={styles.total_info}>
             <span className={styles.total}>
-              총 수량 <span className={styles.total_count}>1개</span>
+              총 수량 <span className={styles.total_count}>{count}개</span>
             </span>
             <span className={styles.total_price}>
-              {convertPrice()}
+              {totalConvertPrice()}
               <span className={styles.total_unit}>원</span>
             </span>
           </div>

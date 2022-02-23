@@ -16,13 +16,13 @@ const Footer = () => {
 
         <ul className={styles.icon_link}>
           <li>
-            <img src="images/icon-insta.svg" alt="insta" />
+            <img src="/images/icon-insta.svg" alt="insta" />
           </li>
           <li>
-            <img src="images/icon-fb.svg" alt="fb" />
+            <img src="/images/icon-fb.svg" alt="fb" />
           </li>
           <li>
-            <img src="images/icon-yt.svg" alt="yt" />
+            <img src="/images/icon-yt.svg" alt="yt" />
           </li>
         </ul>
       </div>
