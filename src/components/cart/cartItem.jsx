@@ -23,6 +23,7 @@ const CartItem = ({ product, token, stateRefresh }) => {
 
   const onDecrease = () => {
     setCount((prevCount) => prevCount - 1);
+    if (count <= 1) setCount(1);
   };
 
   const handleDelete = () => {
