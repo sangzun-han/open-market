@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./cartInfo.module.css";
 import CartItem from "./cartItem";
 
-const CartInfo = ({ products }) => {
+const CartInfo = ({ products, token, setProducts, stateRefresh }) => {
   return (
     <>
       <div className={styles.tab_title}>
@@ -15,7 +15,15 @@ const CartInfo = ({ products }) => {
       </div>
 
       {products.map((product) => {
-        return <CartItem key={product.product_id} product={product} />;
+        return (
+          <CartItem
+            key={product.product_id}
+            product={product}
+            setProducts={setProducts}
+            token={token}
+            stateRefresh={stateRefresh}
+          />
+        );
       })}
     </>
   );

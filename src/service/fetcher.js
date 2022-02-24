@@ -22,6 +22,17 @@ const postConfing = (url, data) => {
   };
 };
 
+const deleteConfig = (url, token) => {
+  return {
+    method: "DELETE",
+    url: API_END_POINT + url,
+    headers: {
+      Authorization: "JWT " + token,
+      "Content-Type": "application/json",
+    },
+  };
+};
+
 const getConfigWithToken = (url, token) => {
   return {
     method: "GET",
@@ -79,5 +90,11 @@ export const putCart = async (data, token) => {
 // 장바구니 목록 보기
 export const getCart = async (token) => {
   const res = await axios(getConfigWithToken("/cart/", token));
+  return res;
+};
+
+// 장바구니 개별 삭제하기
+export const deleteCart = async (cart_item_id, token) => {
+  const res = await axios(deleteConfig(`/cart/${cart_item_id}`, token));
   return res;
 };
