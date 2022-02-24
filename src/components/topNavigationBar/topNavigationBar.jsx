@@ -17,7 +17,7 @@ const TopNavigationBar = ({ token }) => {
       </div>
 
       <div className={styles.menu}>
-        <Link to="#">
+        <Link to="/cart">
           <div className={styles.shopping_cart}>
             <img src="/images/icon-shopping-cart.svg" alt="cart" />
             <span>장바구니</span>
