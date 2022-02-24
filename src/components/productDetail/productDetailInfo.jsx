@@ -33,9 +33,8 @@ const ProductDetailInfo = ({ product, count, setCount, setModal }) => {
     };
 
     putCart(data, token)
-      .then((res) => {
+      .then(() => {
         navigate("/");
-        console.log(res);
       })
       .catch(() => {
         setModal(true);

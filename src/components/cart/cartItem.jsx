@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { deleteCart, getProductDetail } from "../../service/fetcher";
+import {
+  deleteCart,
+  getProductDetail,
+  putUpdateCart,
+} from "../../service/fetcher";
 import styles from "./cartItem.module.css";
 
 const CartItem = ({ product, token, stateRefresh }) => {
-  const { product_id, quantity, cart_item_id } = product;
+  const { product_id, quantity, cart_item_id, is_active } = product;
   const [info, setInfo] = useState({});
   const [count, setCount] = useState(quantity);
-
   const convertPrice = () => {
     return info.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
@@ -18,14 +21,14 @@ const CartItem = ({ product, token, stateRefresh }) => {
   };
 
   const onIncrease = () => {
-    setCount((prevCount) => prevCount + 1);
+    setCount((count) => count + 1);
     if (count >= info.stock) {
       setCount(info.stock);
     }
   };
 
   const onDecrease = () => {
-    setCount((prevCount) => prevCount - 1);
+    setCount((count) => count - 1);
     if (count <= 1) setCount(1);
   };
 
@@ -43,7 +46,20 @@ const CartItem = ({ product, token, stateRefresh }) => {
     getProductDetail(product_id).then((res) => {
       setInfo(res.data);
     });
-  }, [product_id, cart_item_id]);
+  }, [product_id]);
+
+  useEffect(() => {
+    const data = {
+      product_id: product_id,
+      quantity: count,
+      is_active: is_active,
+    };
+    putUpdateCart(cart_item_id, data, token)
+      .then(() => {})
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [product_id, quantity, is_active, token, cart_item_id, count]);
 
   return (
     <>

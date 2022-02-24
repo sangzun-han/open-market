@@ -16,7 +16,6 @@ const Cart = () => {
   useEffect(() => {
     getCart(token).then((res) => setProducts(res.data.results));
   }, [token]);
-
   return (
     <div>
       <TopNavigationBar />
@@ -29,7 +28,7 @@ const Cart = () => {
           stateRefresh={stateRefresh}
         />
       )}
-      <TotalCart products={products} />
+      <TotalCart />
     </div>
   );
 };

@@ -1,8 +1,8 @@
 import React from "react";
+
 import styles from "./totalCart.module.css";
 
-const TotalCart = ({ products }) => {
-  console.log(products);
+const TotalCart = () => {
   return (
     <div className={styles.total}>
       <div className={styles.total_price}>
