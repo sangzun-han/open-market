@@ -19,6 +19,9 @@ const CartItem = ({ product, token, stateRefresh }) => {
 
   const onIncrease = () => {
     setCount((prevCount) => prevCount + 1);
+    if (count >= info.stock) {
+      setCount(info.stock);
+    }
   };
 
   const onDecrease = () => {
@@ -63,7 +66,13 @@ const CartItem = ({ product, token, stateRefresh }) => {
               <p className={styles.seller_store}>{info.seller_store}</p>
               <p className={styles.product_name}>{info.product_name}</p>
               <p className={styles.price}>{convertPrice()}원</p>
-              <p className={styles.delivery}>택배배송 / 무료배송</p>
+              {info.shipping_fee === 0 ? (
+                <p className={styles.delivery}>택배배송 / 무료배송</p>
+              ) : (
+                <p className={styles.delivery}>
+                  배송비 : {info.shipping_fee}원
+                </p>
+              )}
             </div>
           </div>
 
