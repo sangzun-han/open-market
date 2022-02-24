@@ -56,6 +56,17 @@ const postConfigWithToken = (url, data, token) => {
   };
 };
 
+const putConfigWithToken = (url, data, token) => {
+  return {
+    method: "PUT",
+    url: API_END_POINT + url,
+    headers: {
+      Authorization: "JWT " + token,
+      "Content-Type": "application/json",
+    },
+    data: data,
+  };
+};
 // 회원가입
 export const signup = async (userData) => {
   const res = await axios(postConfing("/accounts/signup/", userData));
@@ -90,6 +101,12 @@ export const putCart = async (data, token) => {
 // 장바구니 목록 보기
 export const getCart = async (token) => {
   const res = await axios(getConfigWithToken("/cart/", token));
+  return res;
+};
+
+// 장바구니 수량 수정하기
+export const putUpdateCart = async (cart_item_id, token) => {
+  const res = await axios(putConfigWithToken(`/cart/${cart_item_id}`, token));
   return res;
 };
 

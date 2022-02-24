@@ -34,8 +34,8 @@ const CartItem = ({ product, token, stateRefresh }) => {
       .then(() => {
         stateRefresh();
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
+        alert("삭제에 실패했습니다.");
       });
   };
 
