@@ -118,3 +118,15 @@ export const deleteCart = async (cart_item_id, token) => {
   const res = await axios(deleteConfig(`/cart/${cart_item_id}`, token));
   return res;
 };
+
+// 주문 생성하기
+export const createPayment = async (data, token) => {
+  const res = await axios(postConfigWithToken("/order/", data, token));
+  return res;
+};
+
+// 주문 목록 가져오기
+export const getPayment = async (token) => {
+  const res = await axios(getConfigWithToken("/order/", token));
+  return res;
+};
