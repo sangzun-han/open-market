@@ -4,7 +4,6 @@ import { getCookie } from "../../service/cookie";
 import TopNavigationBar from "../topNavigationBar/topNavigationBar";
 import CartHeader from "./cartHeader";
 import CartInfo from "./cartInfo";
-import TotalCart from "./totalCart";
 
 const Cart = () => {
   const token = getCookie("token");
@@ -28,7 +27,6 @@ const Cart = () => {
           stateRefresh={stateRefresh}
         />
       )}
-      <TotalCart />
     </div>
   );
 };
