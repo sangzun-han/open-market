@@ -1,13 +1,16 @@
 import React from "react";
 
 import styles from "./totalCart.module.css";
+const TotalCart = () => {
+  const convertPrice = (price) => {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
 
-const TotalCart = ({ totalPrice, totalShippingFee }) => {
   return (
     <div className={styles.total}>
       <div className={styles.total_price}>
         <p className={styles.cart_product_total_price}>총 상품금액</p>
-        <p className={styles.cart_product_price}>{totalPrice}</p>
+        <p className={styles.cart_product_price}>17500</p>
       </div>
       <div className={styles.pay_minus}>
         <img src="/images/icon-minus-line.svg" alt="minus" />
@@ -21,14 +24,12 @@ const TotalCart = ({ totalPrice, totalShippingFee }) => {
       </div>
       <div className={styles.delivery}>
         <p className={styles.cart_product_delivery}>배송비</p>
-        <p className={styles.cart_product_delivery_price}>{totalShippingFee}</p>
+        <p className={styles.cart_product_delivery_price}>3000</p>
       </div>
 
       <div className={styles.payment}>
         <p className={styles.cart_prouct_payment}>결정 예정 금액</p>
-        <p className={styles.cart_prouct_payment_price}>
-          {totalPrice + totalShippingFee}원
-        </p>
+        <p className={styles.cart_prouct_payment_price}>2000원</p>
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import {
   putUpdateCart,
 } from "../../service/fetcher";
 import styles from "./cartItem.module.css";
+import TotalCart from "./totalCart";
 
 const CartItem = ({ product, token, stateRefresh }) => {
   const { product_id, quantity, cart_item_id, is_active } = product;
