@@ -29,7 +29,7 @@ const Cart = () => {
           stateRefresh={stateRefresh}
         />
       )}
-      {products && <TotalCart products={products} />}
+      {products.length !== 0 && <TotalCart products={products} />}
     </div>
   );
 };

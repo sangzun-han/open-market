@@ -22,9 +22,7 @@ const TotalCart = ({ products }) => {
       });
       cartItems.forEach((cartItem, index) => {
         getProductDetail(cartItem).then((res) => {
-          setTotal(
-            (price += res.data.price * quantity[index] + res.data.shipping_fee)
-          );
+          setTotal((price += res.data.price * quantity[index]));
           setShippingFee((shipping_fee += res.data.shipping_fee));
         });
       });
