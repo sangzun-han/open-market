@@ -4,11 +4,11 @@ import { getCookie } from "../../service/cookie";
 import TopNavigationBar from "../topNavigationBar/topNavigationBar";
 import CartHeader from "./cartHeader";
 import CartInfo from "./cartInfo";
+import TotalCart from "./totalCart";
 
 const Cart = () => {
   const token = getCookie("token");
   const [products, setProducts] = useState([]);
-
   const stateRefresh = () => {
     getCart(token).then((res) => setProducts(res.data.results));
   };
@@ -29,6 +29,7 @@ const Cart = () => {
           stateRefresh={stateRefresh}
         />
       )}
+      {products && <TotalCart products={products} />}
     </div>
   );
 };

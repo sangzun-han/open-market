@@ -5,20 +5,14 @@ import {
   putUpdateCart,
 } from "../../service/fetcher";
 import styles from "./cartItem.module.css";
-import TotalCart from "./totalCart";
 
 const CartItem = ({ product, token, stateRefresh }) => {
   const { product_id, quantity, cart_item_id, is_active } = product;
   const [info, setInfo] = useState({});
   const [count, setCount] = useState(quantity);
-  const convertPrice = () => {
-    return info.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  };
 
-  const totalConvertPrice = () => {
-    return (info.price * count)
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  const convertPrice = (price) => {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
   const onIncrease = () => {
@@ -82,7 +76,7 @@ const CartItem = ({ product, token, stateRefresh }) => {
             <div className={styles.cart_product_info}>
               <p className={styles.seller_store}>{info.seller_store}</p>
               <p className={styles.product_name}>{info.product_name}</p>
-              <p className={styles.price}>{convertPrice()}원</p>
+              <p className={styles.price}>{convertPrice(info.price)}원</p>
               {info.shipping_fee === 0 ? (
                 <p className={styles.delivery}>택배배송 / 무료배송</p>
               ) : (
@@ -114,7 +108,9 @@ const CartItem = ({ product, token, stateRefresh }) => {
           </div>
 
           <div className={styles.cart_product_price}>
-            <p className={styles.total_price}>{totalConvertPrice()}원</p>
+            <p className={styles.total_price}>
+              {convertPrice(info.price * count)}원
+            </p>
             <button className={styles.btn_submit}>주문하기</button>
           </div>
         </section>
