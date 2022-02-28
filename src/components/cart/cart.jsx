@@ -20,7 +20,7 @@ const Cart = () => {
 
   return (
     <div>
-      <TopNavigationBar />
+      <TopNavigationBar token={token} />
       <CartHeader />
       {products && (
         <CartInfo
