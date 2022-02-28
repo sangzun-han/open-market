@@ -9,6 +9,7 @@ import TotalCart from "./totalCart";
 const Cart = () => {
   const token = getCookie("token");
   const [products, setProducts] = useState([]);
+
   const stateRefresh = () => {
     getCart(token).then((res) => setProducts(res.data.results));
   };

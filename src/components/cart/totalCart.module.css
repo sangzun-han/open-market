@@ -85,3 +85,25 @@
   line-height: 45px;
   color: #eb5757;
 }
+
+.btn {
+  width: 1280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.btn .btn_submit {
+  margin: 0 auto;
+  width: 220px;
+  height: 68px;
+  background: #21bf48;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  color: #ffffff;
+}

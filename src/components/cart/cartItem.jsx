@@ -8,6 +8,7 @@ import styles from "./cartItem.module.css";
 
 const CartItem = ({ product, token, stateRefresh }) => {
   const { product_id, quantity, cart_item_id, is_active } = product;
+
   const [info, setInfo] = useState({});
   const [count, setCount] = useState(quantity);
 
