@@ -1,7 +1,19 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Modal from "../modal/modal";
 import styles from "./topNavigationBar.module.css";
 const TopNavigationBar = ({ token }) => {
+  const navigation = useNavigate();
+  const [modal, setModal] = useState(false);
+
+  const handleCart = () => {
+    if (!token) {
+      setModal(true);
+    } else {
+      navigation("/cart");
+    }
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
@@ -17,12 +29,10 @@ const TopNavigationBar = ({ token }) => {
       </div>
 
       <div className={styles.menu}>
-        <Link to="/cart">
-          <div className={styles.shopping_cart}>
-            <img src="/images/icon-shopping-cart.svg" alt="cart" />
-            <span>장바구니</span>
-          </div>
-        </Link>
+        <div className={styles.shopping_cart} onClick={handleCart}>
+          <img src="/images/icon-shopping-cart.svg" alt="cart" />
+          <span>장바구니</span>
+        </div>
         {token ? (
           <Link to="#">
             <div className={styles.mypage}>
@@ -39,6 +49,7 @@ const TopNavigationBar = ({ token }) => {
           </Link>
         )}
       </div>
+      {modal ? <Modal setModal={setModal} /> : ""}
     </header>
   );
 };
