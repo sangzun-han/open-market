@@ -1,0 +1,5 @@
+.product_info {
+  width: 1280px;
+  display: flex;
+  justify-content: center;
+}
