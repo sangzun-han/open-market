@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getCookie } from "../../service/cookie";
 import { getCart } from "../../service/fetcher";
 import TopNavigationBar from "../topNavigationBar/topNavigationBar";
+import Order from "./order";
 import PaymentHeader from "./paymentHeader";
 import PaymentInfo from "./paymentInfo";
 import PaymentTotal from "./paymentTotal";
@@ -21,6 +22,7 @@ const Payment = () => {
       <PaymentHeader />
       {products && <PaymentInfo products={products} />}
       <PaymentTotal products={products} />
+      <Order />
     </div>
   );
 };
