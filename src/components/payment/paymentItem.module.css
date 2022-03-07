@@ -5,7 +5,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 60px;
+  padding: 0.6rem 60px;
+  border-bottom: 0.5px solid #c4c4c4;
 }
 
 .product_wrap {
@@ -33,14 +34,51 @@
   margin-left: 36px;
 }
 
+.product_info .seller_store {
+  font-size: 14px;
+  line-height: 18px;
+  color: #767676;
+  margin-bottom: 6px;
+}
+
+.product_info .product_name {
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.product_info .product_quantity {
+  font-size: 14px;
+  line-height: 18px;
+  color: #767676;
+}
+
 .product_sale {
   width: 95px;
 }
 
+.product_sale p {
+  font-size: 18px;
+  color: #767676;
+}
 .shipping {
   width: 135px;
 }
 
+.shipping .shipping_fee {
+  font-size: 18px;
+  line-height: 23px;
+  color: #767676;
+}
+
 .total {
   width: 130px;
+}
+
+.total p {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23px;
+  color: #000000;
 }

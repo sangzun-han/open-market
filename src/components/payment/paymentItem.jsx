@@ -4,6 +4,11 @@ import styles from "./paymentItem.module.css";
 
 const PaymentItem = ({ product }) => {
   const [info, setInfo] = useState({});
+
+  const convertPrice = (price) => {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+
   useEffect(() => {
     getProductDetail(product.product_id).then((res) => setInfo(res.data));
   }, [product.product_id]);
@@ -16,6 +21,7 @@ const PaymentItem = ({ product }) => {
         <div className={styles.product_info}>
           <p className={styles.seller_store}>{info.seller_store}</p>
           <p className={styles.product_name}>{info.product_name}</p>
+          <p className={styles.product_quantity}>수량 : {product.quantity}개</p>
         </div>
       </div>
 
@@ -28,7 +34,7 @@ const PaymentItem = ({ product }) => {
       </div>
 
       <div className={styles.total}>
-        <p>17,500원</p>
+        <p>{convertPrice(info.price * product.quantity)}원</p>
       </div>
     </div>
   );

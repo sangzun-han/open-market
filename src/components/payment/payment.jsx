@@ -4,11 +4,11 @@ import { getCart } from "../../service/fetcher";
 import TopNavigationBar from "../topNavigationBar/topNavigationBar";
 import PaymentHeader from "./paymentHeader";
 import PaymentInfo from "./paymentInfo";
+import PaymentTotal from "./paymentTotal";
 
 const Payment = () => {
   const token = getCookie("token");
   const [products, setProducts] = useState([]);
-
   useEffect(() => {
     getCart(token).then((res) => {
       setProducts(res.data.results);
@@ -20,6 +20,7 @@ const Payment = () => {
       <TopNavigationBar token={token} />
       <PaymentHeader />
       {products && <PaymentInfo products={products} />}
+      <PaymentTotal products={products} />
     </div>
   );
 };

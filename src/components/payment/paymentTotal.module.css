@@ -1,0 +1,20 @@
+.total {
+  width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 35px;
+}
+
+.total p {
+  font-size: 18px;
+  line-height: 23px;
+  color: #000000;
+}
+
+.total span {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 30px;
+  color: #eb5757;
+}
