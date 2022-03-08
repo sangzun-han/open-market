@@ -78,10 +78,184 @@
   font-weight: 500;
   line-height: 23px;
   color: #000000;
+  border-bottom: 1px solid #c4c4c4;
+  padding-bottom: 8px;
 }
 
 .address_section {
-  border-bottom: 1px solid #c4c4c4;
   margin-top: 40px;
   padding-bottom: 8px;
+}
+
+.name .label_receiver {
+  margin-right: 125px;
+}
+
+.label_address {
+  margin-right: 111px;
+}
+
+.address_number {
+  width: 170px;
+  height: 40px;
+  border: 1px solid #c4c4c4;
+  margin-top: 8px;
+}
+
+.address_search {
+  width: 154px;
+  height: 40px;
+  background-color: #21bf48;
+  border-radius: 5px;
+  border: none;
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.address_detail {
+  margin-left: 165px;
+  padding-bottom: 8px;
+}
+
+.address_detail input {
+  width: 800px;
+  height: 40px;
+  border: 1px solid #c4c4c4;
+  margin-top: 8px;
+}
+
+.msg {
+  border-top: 1px solid #c4c4c4;
+}
+
+.label_msg {
+  margin-right: 92px;
+}
+.input_msg {
+  width: 800px;
+  height: 40px;
+  border: 1px solid #c4c4c4;
+  margin-top: 8px;
+}
+
+.payment_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.payment_method {
+  margin-top: 70px;
+}
+
+.payment_method h2 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #000000;
+  padding-bottom: 8px;
+}
+
+.payment {
+  display: flex;
+  align-items: center;
+  padding: 18px 0px;
+  border-bottom: 1px solid #c4c4c4;
+  border-top: 1px solid #c4c4c4;
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #c4c4c4;
+  margin-right: 10px;
+}
+
+.payment label {
+  margin-right: 20px;
+}
+
+.total_payment {
+  margin-left: 40px;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+}
+
+.total_payment .total {
+  width: 480px;
+  height: 400px;
+  border: 2px solid #21bf48;
+  border-radius: 5px;
+}
+
+.total .total_price_wrapper {
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total_price_wrapper .total_price {
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.total_price_wrapper .price {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000000;
+}
+
+.total_price_wrapper span {
+  font-size: 14px;
+  line-height: 18px;
+  color: #767676;
+}
+
+.total_payment .line {
+  width: 432px;
+  height: 1px;
+  margin: 0 auto;
+  background: #c4c4c4;
+}
+
+.last_price {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 30px;
+  color: #eb5757;
+}
+
+.terms {
+  display: flex;
+  padding: 20px 30px;
+  align-items: center;
+}
+
+.terms input {
+  margin-right: 10px;
+}
+
+.btn_pay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pay {
+  width: 220px;
+  height: 68px;
+  background: #c4c4c4;
+  border-radius: 5px;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 30px;
+  color: #ffffff;
 }

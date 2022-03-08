@@ -88,7 +88,9 @@ const SignupForm = ({
 
           <div className={styles.password}>
             <div className={styles.label}>
-              <label htmlFor="password">비밀번호</label>
+              <label htmlFor="password" className={styles.label_pwd}>
+                비밀번호
+              </label>
               <input
                 ref={pwdRef}
                 className={styles.input_password}
@@ -101,7 +103,9 @@ const SignupForm = ({
 
           <div className={styles.check_password}>
             <div className={styles.label}>
-              <label htmlFor="password">비밀번호 재확인</label>
+              <label htmlFor="password" className={styles.label_pwd}>
+                비밀번호 재확인
+              </label>
               <input
                 ref={rePwdRef}
                 className={styles.check_input_password}
@@ -122,7 +126,9 @@ const SignupForm = ({
 
           <div className={styles.name}>
             <div className={styles.label}>
-              <label htmlFor="name">이름</label>
+              <label htmlFor="name" className={styles.label_name}>
+                이름
+              </label>
               <input ref={nameRef} className={styles.name_input} type="name" />
             </div>
           </div>
