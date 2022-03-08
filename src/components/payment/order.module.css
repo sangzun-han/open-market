@@ -1,0 +1,87 @@
+.section {
+  width: 1280px;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding-bottom: 8px;
+}
+
+.section h1 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+  color: #000000;
+  border-bottom: 1px solid #c4c4c4;
+  padding-bottom: 8px;
+}
+
+.name,
+.email {
+  padding: 8px 0px;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.name .label_name {
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin-right: 140px;
+}
+
+.email .label_email {
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin-right: 125px;
+}
+
+.name .input_name,
+.email .input_email {
+  width: 334px;
+  height: 40px;
+  border: 1px solid #c4c4c4;
+}
+
+.phone {
+  padding: 8px 0px;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.phone .label_phone {
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin-right: 125px;
+}
+
+.phone .input_phone1 {
+  width: 80px;
+  height: 40px;
+  border: 1px solid #c4c4c4;
+}
+
+.phone .input_phone2,
+.phone .input_phone3 {
+  width: 100px;
+  height: 40px;
+  border: 1px solid #c4c4c4;
+}
+
+.phone span {
+  padding: 0 6px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.address {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+  color: #000000;
+}
+
+.address_section {
+  border-bottom: 1px solid #c4c4c4;
+  margin-top: 40px;
+  padding-bottom: 8px;
+}
