@@ -1,38 +1,13 @@
+### 구현사항
 
-`API 오류로 인한 작업 중단`
-
-오픈마켓 서비스는 판매자와 구매자를 구별하여 판매자가 상품을 등록, 판매하며 구매자는 구매하는 서비스입니다.
-`React` 를 사용하여 상품 등록, 결제, 상품에 대한 CRUD를 직접 구현합니다.
-
-[요구사항](https://silver-lumber-2a3.notion.site/6327f68c03704aebb9ceede23cdbe8e1)
-
-[구현 페이지]
-
-1. 구매자
-
-- 로그인 페이지
-<img width="500" alt="login" src="https://user-images.githubusercontent.com/57563053/157380183-f457e1e0-3718-4c8f-a992-04a5ec4a0db8.png">
-
-- 회원 가입 페이지
-<img width="400" alt="signup" src="https://user-images.githubusercontent.com/57563053/157380177-fa747124-c32d-445a-8260-779fb59a8f73.png">
-
-- 상품 목록 페이지
-<img width="500" alt="main" src="https://user-images.githubusercontent.com/57563053/157380163-89b02bb9-92f4-4c14-871d-75aade45a06d.png">
-
-- 상품 상세 페이지
-<img width="500" alt="detail" src="https://user-images.githubusercontent.com/57563053/157380151-dd0bfcba-46bc-4987-a79c-f4eb57b3f21e.png">
-
-- 장바구니 페이지
-<img width="500" alt="cart" src="https://user-images.githubusercontent.com/57563053/157375740-ff1da7b8-e74c-49ec-956c-633b997d8628.png">
-
-- 주문/결제 페이지
- <img width="500" alt="paymnet2" src="https://user-images.githubusercontent.com/57563053/157375610-86514408-052f-434b-b4b0-aad264979b1e.png">
-
-2. 판매자
-
-- 로그인 페이지
-- 회원 가입 페이지
-- 상품 목록 페이지
-- 상품 상세 페이지
-- 판매자 센터 페이지
-- 상품 등록 페이지
+- 쇼핑 아이템 목록 페이지 구현
+- 아이템의 상세페이지 구현
+- 상세페이지 내에서 옵션,갯수 선택 가능
+- 옵션과 아이템 선택 갯수에 따라 상품의 총액 계산 노출
+- 장바구니 담기 구현
+- 아이템 상세에서 장바구니에 담기를 클릭하면 상단에 구현된 장바구니 아이콘 옆에 담긴 상품 갯수 노출
+- 장바구니 목록 페이지 구현
+- 장바구니 목록에는 아이템명과 아이템의 옵션, 수량, 개별금액, 총 금액 노출
+- 총 3개의 페이지 구현 → 목록 / 상세 / 장바구니
+- 금액은 노출될때 천원단위 콤마 표시
+- 상세페이지에서 담기 버튼은 옵션과 수량이 선택되지 않으면 비활성화
