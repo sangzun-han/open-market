@@ -1,6 +1,7 @@
-import React from "react";
-import EventBanner from "../eventBanner/eventBanner";
-import TopNavigationBar from "../header/topNavigationBar/topNavigationBar";
+import { EventBanner } from "../eventBanner/eventBanner";
+import { TopNavigationBar } from "../header/topNavigationBar/topNavigationBar";
+import { Product } from "../products/product";
+import data from "../../data/products.json";
 import styles from "./main.module.css";
 
 export const Main = () => {
@@ -8,7 +9,11 @@ export const Main = () => {
     <>
       <TopNavigationBar />
       <EventBanner />
-      <main className={styles.flex_wrap}></main>
+      <main className={styles.flex_wrap}>
+        {data.products.map((product) => {
+          return <Product key={`key-${product.id}`} product={product} />;
+        })}
+      </main>
     </>
   );
 };

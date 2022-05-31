@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Hack Your Life 개발자 노트북 파우치",
+      "provider": "우당탕탕 라이캣의 실험실",
+      "price": 29000,
+      "image": "./images/image001.png"
+    },
+    {
+      "id": 2,
+      "name": "금속키링",
+      "provider": "으라차차 에에",
+      "price": 9900,
+      "image": "./images/image002.png"
+    },
+    {
+      "id": 3,
+      "name": "개발자 무릎 담요",
+      "provider": "글로벌개발자",
+      "price": 15900,
+      "image": "./images/image003.png"
+    },
+    {
+      "id": 4,
+      "name": "우당탕탕 라이캣의 실험실 스티커 팩",
+      "provider": "코딩엔유",
+      "price": 5900,
+      "image": "./images/image004.png"
+    },
+    {
+      "id": 5,
+      "name": "버그를 Java라 버그잡는 키링",
+      "provider": "파이썬스쿨",
+      "price": 3900,
+      "image": "./images/image005.png"
+    }
+  ]
+}

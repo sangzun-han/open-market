@@ -1,8 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
-
 import styles from "./topNavigationBar.module.css";
-const TopNavigationBar = () => {
+
+export const TopNavigationBar = () => {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
@@ -32,5 +31,3 @@ const TopNavigationBar = () => {
     </header>
   );
 };
-
-export default TopNavigationBar;

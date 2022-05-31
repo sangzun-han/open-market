@@ -1,7 +1,6 @@
-import React from "react";
 import styles from "./eventBanner.module.css";
 
-const EventBanner = () => {
+export const EventBanner = () => {
   return (
     <article className={styles.banner}>
       <div className={styles.right}>
@@ -13,5 +12,3 @@ const EventBanner = () => {
     </article>
   );
 };
-
-export default EventBanner;
