@@ -1,9 +1,9 @@
 import React from "react";
 import EventBanner from "../eventBanner/eventBanner";
-import TopNavigationBar from "../../header/topNavigationBar/topNavigationBar";
-import styles from "./home.module.css";
+import TopNavigationBar from "../header/topNavigationBar/topNavigationBar";
+import styles from "./main.module.css";
 
-const Home = () => {
+export const Main = () => {
   return (
     <>
       <TopNavigationBar />
@@ -12,5 +12,3 @@ const Home = () => {
     </>
   );
 };
-
-export default Home;
