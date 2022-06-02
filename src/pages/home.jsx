@@ -1,7 +1,7 @@
 import { Main } from "../components/main/main";
 
-const Home = () => {
-  return <Main />;
+const Home = ({ convertPrice }) => {
+  return <Main convertPrice={convertPrice} />;
 };
 
 export default Home;

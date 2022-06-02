@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./product.module.css";
 
-export const Product = ({ product }) => {
+export const Product = ({ product, convertPrice }) => {
   const { id, name, provider, price, image } = product;
 
   return (
@@ -21,7 +21,7 @@ export const Product = ({ product }) => {
         </div>
 
         <div className={styles.product_price}>
-          <span className={styles.price}>{price}</span>
+          <span className={styles.price}>{convertPrice(price)}</span>
           <span className={styles.unit}>원</span>
         </div>
       </div>

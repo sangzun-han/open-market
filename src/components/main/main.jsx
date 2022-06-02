@@ -5,7 +5,7 @@ import { Product } from "../products/product";
 import styles from "./main.module.css";
 import axios from "axios";
 
-export const Main = () => {
+export const Main = ({ convertPrice }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -22,7 +22,13 @@ export const Main = () => {
       <EventBanner />
       <main className={styles.flex_wrap}>
         {products.map((product) => {
-          return <Product key={`key-${product.id}`} product={product} />;
+          return (
+            <Product
+              key={`key-${product.id}`}
+              product={product}
+              convertPrice={convertPrice}
+            />
+          );
         })}
       </main>
     </>
