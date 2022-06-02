@@ -2,9 +2,8 @@ import axios from "axios";
 import styles from "./detail.module.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { TopNavigationBar } from "../header/topNavigationBar/topNavigationBar";
 
-export const Detail = ({ convertPrice }) => {
+export const Detail = ({ convertPrice, cart, setCart }) => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [count, setCount] = useState(1);
@@ -16,6 +15,17 @@ export const Detail = ({ convertPrice }) => {
       if (count === 1) return;
       setCount(count - 1);
     }
+  };
+
+  const handleCart = () => {
+    setCart({
+      id: product.id,
+      image: product.image,
+      name: product.name,
+      quantity: count,
+      price: product.price * count,
+      provider: product.provider,
+    });
   };
   useEffect(() => {
     const apiUrl = "/data/products.json";
@@ -30,7 +40,6 @@ export const Detail = ({ convertPrice }) => {
   return (
     product && (
       <>
-        <TopNavigationBar />
         <main className={styles.main}>
           <section className={styles.product}>
             <div className={styles.product_img}>
@@ -91,7 +100,14 @@ export const Detail = ({ convertPrice }) => {
 
             <div className={styles.btn}>
               <button className={styles.btn_buy}>바로 구매</button>
-              <button className={styles.btn_cart}>장바구니</button>
+              <button
+                className={styles.btn_cart}
+                onClick={() => {
+                  handleCart();
+                }}
+              >
+                장바구니
+              </button>
             </div>
           </section>
         </main>

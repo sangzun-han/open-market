@@ -2,18 +2,30 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import Product from "./pages/product";
+import { useState } from "react";
+import { TopNavigationBar } from "./components/header/topNavigationBar/topNavigationBar";
 
 function App() {
+  const [cart, setCart] = useState({});
+
   const convertPrice = (price) => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
+
   return (
     <BrowserRouter>
+      <TopNavigationBar />
       <Routes>
         <Route path="/" element={<Home convertPrice={convertPrice} />} />
         <Route
           path="/product/:id"
-          element={<Product convertPrice={convertPrice} />}
+          element={
+            <Product
+              convertPrice={convertPrice}
+              cart={cart}
+              setCart={setCart}
+            />
+          }
         />
       </Routes>
     </BrowserRouter>
