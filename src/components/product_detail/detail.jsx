@@ -27,7 +27,7 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
       image: product.image,
       name: product.name,
       quantity: quantity,
-      price: product.price * quantity,
+      price: product.price,
       provider: product.provider,
     };
     setCart([...cart.slice(0, idx), cartItem, ...cart.slice(idx + 1)]);
@@ -39,7 +39,7 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
       image: product.image,
       name: product.name,
       quantity: count,
-      price: product.price * count,
+      price: product.price,
       provider: product.provider,
     };
     const found = cart.find((el) => el.id === cartItem.id);

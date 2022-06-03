@@ -26,7 +26,10 @@ function App() {
             />
           }
         />
-        <Route path="/cart" element={<Basket cart={cart} />} />
+        <Route
+          path="/cart"
+          element={<Basket cart={cart} convertPrice={convertPrice} />}
+        />
       </Routes>
     </BrowserRouter>
   );
