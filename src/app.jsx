@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import Product from "./pages/product";
+import Cart from "./pages/cart";
 import { useState } from "react";
 import { TopNavigationBar } from "./components/header/topNavigationBar/topNavigationBar";
 
@@ -10,7 +11,6 @@ function App() {
   const convertPrice = (price) => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
-
   return (
     <BrowserRouter>
       <TopNavigationBar cart={cart} />
@@ -26,6 +26,7 @@ function App() {
             />
           }
         />
+        <Route path="/cart" element={<Cart cart={cart} />} />
       </Routes>
     </BrowserRouter>
   );

@@ -8,6 +8,7 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
   const [product, setProduct] = useState({});
   const [count, setCount] = useState(1);
 
+  // 상세페이지에서 물건 수량 조절
   const handleQuantity = (type) => {
     if (type === "plus") {
       setCount(count + 1);
@@ -17,8 +18,23 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
     }
   };
 
+  // 장바구니에 중복된 물건을 담을 때 사용
+  const setQuantity = (id, quantity) => {
+    const found = cart.filter((el) => el.id === id)[0];
+    const idx = cart.indexOf(found);
+    const cartItem = {
+      id: product.id,
+      image: product.image,
+      name: product.name,
+      quantity: quantity,
+      price: product.price * quantity,
+      provider: product.provider,
+    };
+    setCart([...cart.slice(0, idx), cartItem, ...cart.slice(idx + 1)]);
+  };
+
   const handleCart = () => {
-    let obj = {
+    const cartItem = {
       id: product.id,
       image: product.image,
       name: product.name,
@@ -26,7 +42,9 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
       price: product.price * count,
       provider: product.provider,
     };
-    setCart([...cart, obj]);
+    const found = cart.find((el) => el.id === cartItem.id);
+    if (found) setQuantity(cartItem.id, found.quantity + count);
+    else setCart([...cart, cartItem]);
   };
 
   useEffect(() => {
