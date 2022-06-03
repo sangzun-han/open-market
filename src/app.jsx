@@ -6,15 +6,14 @@ import { useState } from "react";
 import { TopNavigationBar } from "./components/header/topNavigationBar/topNavigationBar";
 
 function App() {
-  const [cart, setCart] = useState({});
-
+  const [cart, setCart] = useState([]);
   const convertPrice = (price) => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
   return (
     <BrowserRouter>
-      <TopNavigationBar />
+      <TopNavigationBar cart={cart} />
       <Routes>
         <Route path="/" element={<Home convertPrice={convertPrice} />} />
         <Route

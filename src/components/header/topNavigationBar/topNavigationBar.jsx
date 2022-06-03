@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./topNavigationBar.module.css";
 
-export const TopNavigationBar = () => {
+export const TopNavigationBar = ({ cart }) => {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
@@ -20,6 +20,7 @@ export const TopNavigationBar = () => {
         <div className={styles.shopping_cart}>
           <img src="/images/icon-shopping-cart.svg" alt="cart" />
           <span>장바구니</span>
+          {cart.length >= 1 ? <span>{cart.length}</span> : ""}
         </div>
         <Link to="/login">
           <div className={styles.mypage}>

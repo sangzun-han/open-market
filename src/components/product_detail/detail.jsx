@@ -18,18 +18,19 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
   };
 
   const handleCart = () => {
-    setCart({
+    let obj = {
       id: product.id,
       image: product.image,
       name: product.name,
       quantity: count,
       price: product.price * count,
       provider: product.provider,
-    });
+    };
+    setCart([...cart, obj]);
   };
+
   useEffect(() => {
     const apiUrl = "/data/products.json";
-
     axios.get(apiUrl).then((data) => {
       setProduct(
         data.data.products.find((product) => product.id === parseInt(id))
