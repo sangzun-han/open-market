@@ -61,6 +61,7 @@
 
 .shopping_cart,
 .mypage {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,6 +72,25 @@
 .shopping_cart {
   width: 46px;
   height: 50px;
+}
+
+.shopping_cart .new_shopping_cart {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 0;
+  right: 0;
+  background-color: #eb5757;
+  border-radius: 50%;
+}
+
+.shopping_cart .new_shopping_cart p {
+  position: relative;
+  top: 50%;
+  left: 45%;
+  transform: translate(-10%, -45%);
+  background: transparent;
+  font-size: 12px;
 }
 
 .mypage {

@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import Product from "./pages/product";
-import Cart from "./pages/cart";
+import Basket from "./pages/basket";
 import { useState } from "react";
 import { TopNavigationBar } from "./components/header/topNavigationBar/topNavigationBar";
 
@@ -26,7 +26,7 @@ function App() {
             />
           }
         />
-        <Route path="/cart" element={<Cart cart={cart} />} />
+        <Route path="/cart" element={<Basket cart={cart} />} />
       </Routes>
     </BrowserRouter>
   );
