@@ -32,6 +32,10 @@ export const Cart = ({ cart, setCart, convertPrice }) => {
     }
   };
 
+  const onRemove = (id) => {
+    setCart(cart.filter((cart) => cart.id !== id));
+  };
+
   return (
     <>
       <CartHeader />
@@ -44,6 +48,7 @@ export const Cart = ({ cart, setCart, convertPrice }) => {
               setCart={setCart}
               convertPrice={convertPrice}
               handleQuantity={handleQuantity}
+              onRemove={onRemove}
             />
           );
         })

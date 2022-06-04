@@ -1,6 +1,6 @@
 import styles from "./cart.module.css";
 
-export const CartList = ({ cart, handleQuantity, convertPrice }) => {
+export const CartList = ({ cart, convertPrice, handleQuantity, onRemove }) => {
   return (
     <section className={styles.cart_product_list}>
       <input type="checkbox" />
@@ -43,6 +43,10 @@ export const CartList = ({ cart, handleQuantity, convertPrice }) => {
       <div className={styles.cart_product_price}>
         <p className={styles.total_price}></p>
         <button className={styles.btn_submit}>주문하기</button>
+      </div>
+
+      <div className={styles.product_remove} onClick={() => onRemove(cart.id)}>
+        <img src="/images/icon-delete.svg" alt="delete" />
       </div>
     </section>
   );
