@@ -1,12 +1,10 @@
 import styles from "./main.module.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { EventBanner } from "../eventBanner/eventBanner";
 import { Product } from "../products/product";
 import { getProducts } from "../../service/fetcher";
 
-export const Main = ({ convertPrice }) => {
-  const [products, setProducts] = useState([]);
-
+export const Main = ({ convertPrice, products, setProducts }) => {
   const sortProduct = (type) => {
     if (type === "recent") {
       const newProduct = [...products];
@@ -14,7 +12,6 @@ export const Main = ({ convertPrice }) => {
       setProducts(newProduct);
     } else if (type === "row") {
       const newProduct = [...products];
-
       newProduct.sort((a, b) => a.price - b.price);
       setProducts(newProduct);
     } else if (type === "high") {
@@ -28,7 +25,7 @@ export const Main = ({ convertPrice }) => {
     getProducts().then((data) => {
       setProducts(data.data.products);
     });
-  }, []);
+  }, [setProducts]);
   return (
     <>
       <EventBanner />
