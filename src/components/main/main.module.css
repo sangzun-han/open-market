@@ -1,3 +1,19 @@
+.filter {
+  display: flex;
+  width: 1280px;
+  margin: 0 auto;
+  justify-content: flex-end;
+}
+
+.filter > p:not(:last-child)::after {
+  content: "|";
+  padding: 10px;
+}
+
+.filter p {
+  cursor: pointer;
+}
+
 .flex_wrap {
   width: 1440px;
   display: grid;
@@ -5,4 +21,5 @@
   place-items: center;
   gap: 70px 0px;
   margin: 0 auto;
+  margin-top: 35px;
 }

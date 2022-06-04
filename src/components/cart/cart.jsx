@@ -2,7 +2,6 @@ import styles from "./cart.module.css";
 import { CartHeader } from "./cartHeader";
 import { CartList } from "./cartList";
 import { TotalCart } from "./totalCart";
-
 export const Cart = ({ cart, setCart, convertPrice }) => {
   const handleQuantity = (type, id, quantity) => {
     const found = cart.filter((el) => el.id === id)[0];
