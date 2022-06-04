@@ -17,6 +17,7 @@
   height: 38px;
   margin-right: 30px;
 }
+
 .inner .logo img {
   width: 124px;
   height: 38px;
@@ -114,4 +115,10 @@
 .mypage img {
   width: 50px;
   height: 32px;
+}
+
+@media (max-width: 768px) {
+  .input_wrap {
+    display: none;
+  }
 }

@@ -103,7 +103,9 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
             <div className={styles.line}></div>
 
             <div className={styles.sum}>
-              <span className={styles.sum_price}>총 상품 금액</span>
+              <div>
+                <span className={styles.sum_price}>총 상품 금액</span>
+              </div>
 
               <div className={styles.total_info}>
                 <span className={styles.total}>
