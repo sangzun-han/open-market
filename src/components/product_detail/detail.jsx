@@ -1,7 +1,7 @@
-import axios from "axios";
 import styles from "./detail.module.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { getProducts } from "../../service/fetcher";
 
 export const Detail = ({ convertPrice, cart, setCart }) => {
   const { id } = useParams();
@@ -48,8 +48,7 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
   };
 
   useEffect(() => {
-    const apiUrl = "/data/products.json";
-    axios.get(apiUrl).then((data) => {
+    getProducts().then((data) => {
       setProduct(
         data.data.products.find((product) => product.id === parseInt(id))
       );
