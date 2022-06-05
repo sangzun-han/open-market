@@ -325,3 +325,11 @@
   height: 15px;
   cursor: pointer;
 }
+
+@media (max-width: 1280px) {
+  .tab_title,
+  .cart_product_list,
+  .total {
+    width: 95%;
+  }
+}
