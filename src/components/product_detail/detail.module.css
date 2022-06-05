@@ -28,9 +28,13 @@
 }
 
 .product_info {
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .product_info .seller_store {
@@ -101,7 +105,7 @@
 .amount .count {
   position: absolute;
   width: 56px;
-  height: 44px;
+  height: 49px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -216,7 +220,7 @@
   .product {
     width: 100%;
     margin: 0;
-    padding: 30px;
+    padding: 20px;
     padding-bottom: 0;
   }
 
