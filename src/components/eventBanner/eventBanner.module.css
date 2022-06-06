@@ -10,22 +10,22 @@
   position: absolute;
   transform: translateY(-50%);
   top: 50%;
-  right: 56px;
-  background: #f2f2f2;
+  right: 5%;
+  background: transparent;
 }
 
 .right img {
-  background: #f2f2f2;
+  background: transparent;
 }
 
 .left {
   position: absolute;
   top: 50%;
-  left: 56px;
+  left: 5%;
   transform: translateY(-50%);
-  background: #f2f2f2;
+  background: transparent;
 }
 
 .left img {
-  background: #f2f2f2;
+  background: transparent;
 }
