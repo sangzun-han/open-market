@@ -37,6 +37,13 @@
   border: none;
 }
 
+.tab_title p {
+  display: none;
+  background: #f2f2f2;
+  font-size: 18px;
+  color: #767676;
+}
+
 /* cartList*/
 .cart_product_list {
   position: relative;
@@ -336,6 +343,19 @@
 }
 
 @media (max-width: 768px) {
+  .tab_title {
+    display: flex;
+    padding-left: 50px;
+  }
+  .tab_title span {
+    display: none;
+  }
+
+  .tab_title p {
+    display: block;
+    margin-left: 50px;
+  }
+
   .cart_product_list {
     height: 300px;
     display: flex;

@@ -1,7 +1,9 @@
 import styles from "./cart.module.css";
+import { useState } from "react";
 import { CartHeader } from "./cartHeader";
 import { CartList } from "./cartList";
 import { TotalCart } from "./totalCart";
+
 export const Cart = ({ cart, setCart, convertPrice }) => {
   const handleQuantity = (type, id, quantity) => {
     const found = cart.filter((el) => el.id === id)[0];
@@ -35,9 +37,31 @@ export const Cart = ({ cart, setCart, convertPrice }) => {
     setCart(cart.filter((cart) => cart.id !== id));
   };
 
+  const [checkLists, setCheckLists] = useState([]);
+
+  const handleCheckList = (checked, id) => {
+    if (checked) {
+      setCheckLists([...checkLists, id]);
+    } else {
+      setCheckLists(checkLists.filter((check) => check !== id));
+    }
+  };
+
+  const handleCheckAll = (checked) => {
+    if (checked) {
+      const checkItems = [];
+      cart.map((cart) => checkItems.push(`check${cart.id}`));
+      setCheckLists(checkItems);
+    } else {
+      setCheckLists([]);
+    }
+  };
+  const isAllChecked =
+    cart.length === checkLists.length && checkLists.length !== 0;
+
   return (
     <>
-      <CartHeader />
+      <CartHeader isAllChecked={isAllChecked} handleCheckAll={handleCheckAll} />
       {cart.length !== 0 ? (
         cart.map((cart) => {
           return (
@@ -48,6 +72,8 @@ export const Cart = ({ cart, setCart, convertPrice }) => {
               convertPrice={convertPrice}
               handleQuantity={handleQuantity}
               onRemove={onRemove}
+              checkLists={checkLists}
+              handleCheckList={handleCheckList}
             />
           );
         })

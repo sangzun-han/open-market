@@ -1,9 +1,23 @@
 import styles from "./cart.module.css";
 
-export const CartList = ({ cart, convertPrice, handleQuantity, onRemove }) => {
+export const CartList = ({
+  cart,
+  convertPrice,
+  handleQuantity,
+  onRemove,
+  checkLists,
+  handleCheckList,
+}) => {
   return (
     <section className={styles.cart_product_list}>
-      <input type="checkbox" />
+      <input
+        type="checkbox"
+        id={cart.id}
+        onChange={(e) => {
+          handleCheckList(e.currentTarget.checked, `check${cart.id}`);
+        }}
+        checked={checkLists.includes(`check${cart.id}`) ? true : false}
+      />
       <div className={styles.cart_product_wrap}>
         <div className={styles.cart_product_image}>
           <img src={cart.image} alt="product-img" />
