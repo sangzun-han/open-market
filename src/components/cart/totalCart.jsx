@@ -1,15 +1,21 @@
 import styles from "./cart.module.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-export const TotalCart = ({ cart, convertPrice }) => {
-  const [total, setTotal] = useState(0);
-
+export const TotalCart = ({ total, setTotal, cart, convertPrice, found }) => {
   useEffect(() => {
-    const sum = cart.map((item) => item.price * item.quantity);
-    const reducer = (acc, cur) => acc + cur;
-    const itemTotal = sum.reduce(reducer);
-    setTotal(itemTotal);
-  }, [cart, total]);
+    if (found) {
+      const sum = found.map((item) => item[0].price * item[0].quantity);
+      const reducer = (acc, cur) => acc + cur;
+      if (sum.length === 0) {
+        setTotal(0);
+        return;
+      }
+      const itemTotal = sum.reduce(reducer);
+      setTotal(itemTotal);
+    } else {
+      setTotal(0);
+    }
+  }, [cart, total, found, setTotal]);
 
   return (
     <div className={styles.total}>

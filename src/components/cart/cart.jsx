@@ -5,6 +5,14 @@ import { CartList } from "./cartList";
 import { TotalCart } from "./totalCart";
 
 export const Cart = ({ cart, setCart, convertPrice }) => {
+  const [total, setTotal] = useState(0);
+  const [checkLists, setCheckLists] = useState([]);
+  const isAllChecked =
+    cart.length === checkLists.length && checkLists.length !== 0;
+  const found = checkLists.map((checkList) =>
+    cart.filter((el) => el.id === parseInt(checkList))
+  );
+
   const handleQuantity = (type, id, quantity) => {
     const found = cart.filter((el) => el.id === id)[0];
     const idx = cart.indexOf(found);
@@ -33,11 +41,9 @@ export const Cart = ({ cart, setCart, convertPrice }) => {
     }
   };
 
-  const onRemove = (id) => {
+  const handleRemove = (id) => {
     setCart(cart.filter((cart) => cart.id !== id));
   };
-
-  const [checkLists, setCheckLists] = useState([]);
 
   const handleCheckList = (checked, id) => {
     if (checked) {
@@ -50,14 +56,12 @@ export const Cart = ({ cart, setCart, convertPrice }) => {
   const handleCheckAll = (checked) => {
     if (checked) {
       const checkItems = [];
-      cart.map((cart) => checkItems.push(`check${cart.id}`));
+      cart.map((cart) => checkItems.push(`${cart.id}`));
       setCheckLists(checkItems);
     } else {
       setCheckLists([]);
     }
   };
-  const isAllChecked =
-    cart.length === checkLists.length && checkLists.length !== 0;
 
   return (
     <>
@@ -71,9 +75,9 @@ export const Cart = ({ cart, setCart, convertPrice }) => {
               setCart={setCart}
               convertPrice={convertPrice}
               handleQuantity={handleQuantity}
-              onRemove={onRemove}
-              checkLists={checkLists}
+              handleRemove={handleRemove}
               handleCheckList={handleCheckList}
+              checkLists={checkLists}
             />
           );
         })
@@ -84,7 +88,13 @@ export const Cart = ({ cart, setCart, convertPrice }) => {
         </div>
       )}
       {cart.length !== 0 ? (
-        <TotalCart cart={cart} convertPrice={convertPrice} />
+        <TotalCart
+          cart={cart}
+          total={total}
+          setTotal={setTotal}
+          convertPrice={convertPrice}
+          found={found}
+        />
       ) : (
         ""
       )}
