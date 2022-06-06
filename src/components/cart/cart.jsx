@@ -9,6 +9,7 @@ export const Cart = ({ cart, setCart, convertPrice }) => {
   const [checkLists, setCheckLists] = useState([]);
   const isAllChecked =
     cart.length === checkLists.length && checkLists.length !== 0;
+
   const found = checkLists.map((checkList) =>
     cart.filter((el) => el.id === parseInt(checkList))
   );
@@ -43,6 +44,7 @@ export const Cart = ({ cart, setCart, convertPrice }) => {
 
   const handleRemove = (id) => {
     setCart(cart.filter((cart) => cart.id !== id));
+    setCheckLists(checkLists.filter((check) => parseInt(check) !== id));
   };
 
   const handleCheckList = (checked, id) => {
