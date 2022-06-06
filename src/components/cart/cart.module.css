@@ -26,14 +26,14 @@
 .tab_title input[type="checkbox"] {
   width: 20px;
   height: 20px;
-  border: 2px solid #21bf48;
+  border: 2px solid #19ce60;
   border-radius: 50%;
   appearance: none;
   cursor: pointer;
 }
 
 .tab_title input[type="checkbox"]:checked {
-  background: #21bf48;
+  background: #19ce60;
   border: none;
 }
 
@@ -61,14 +61,14 @@
 .cart_product_list input[type="checkbox"] {
   width: 20px;
   height: 20px;
-  border: 2px solid #21bf48;
+  border: 2px solid #19ce60;
   border-radius: 50%;
   appearance: none;
   cursor: pointer;
 }
 
 .cart_product_list input[type="checkbox"]:checked {
-  background: #21bf48;
+  background: #19ce60;
   border: none;
 }
 
@@ -182,7 +182,7 @@
 .cart_product_price .btn_submit {
   width: 130px;
   height: 40px;
-  background: #21bf48;
+  background: #19ce60;
   border-radius: 5px;
   border: none;
   font-weight: 500;
@@ -316,7 +316,7 @@
   margin: 0 auto;
   width: 220px;
   height: 68px;
-  background: #21bf48;
+  background: #19ce60;
   border-radius: 5px;
   border: none;
   font-weight: bold;

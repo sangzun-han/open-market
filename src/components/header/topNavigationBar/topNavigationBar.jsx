@@ -7,7 +7,7 @@ export const TopNavigationBar = ({ cart }) => {
       <div className={styles.inner}>
         <Link to="/">
           <h1 className={styles.logo}>
-            <img src="/images/Logo-hodu.png" alt="logo" />
+            <img src="/images/logo.png" alt="logo" />
           </h1>
         </Link>
         <div className={styles.input_wrap}>
