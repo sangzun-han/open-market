@@ -4,7 +4,7 @@
 git clone
 cd open-market
 npm i
-yarn start
+npm start
 ```
 
 ### 구현사항
@@ -24,4 +24,3 @@ yarn start
 <div align="center">
   <img src="https://user-images.githubusercontent.com/57563053/172138503-83c27f90-f211-4197-848f-20f2945d4704.gif" alt="image")
 </div>
-
